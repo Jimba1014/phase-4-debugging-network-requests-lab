@@ -64,10 +64,24 @@ developing your own process.
 
   - How I debugged:
 
+  - We got a 500 (interal Server Error)
+  -there was a NameError
+  - looks like a typo so we changed Toys to Toy
+
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  - we got End of JSON error which had me look into the ToyCard.js file. It was expecting a response from the backend that
+  - We werent sending anything back from as a response from the server.
+  - We fixed that by sending a sepsonse back in the update route in toys_controller.rb that fixed our server
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  - After pressing the butto nwe are getting a 404 error.
+  - Rails log showed: Started DELETE "/toys/9" for 127.0.0.1 at 2022-11-03 12:10:43 -0400
+ActionController::RoutingError (No route matches [DELETE] "/toys/9"):
+  -Updated the routes file, there wasnt any actio nfor hte destroy function.
+  - Added the destroy route and it works
